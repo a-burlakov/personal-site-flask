@@ -1,0 +1,41 @@
+body {
+    font: 16px/1.6 Comic Sans,Helvetica,sans-serif;
+    font-weight: 300;
+}
+
+.site-sidebar .person {
+    text-align: center;
+}
+
+.site-sidebar {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+    width: 25%;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+    background-color: rgba(9,48,145,0.80);
+}
+
+.site-sidebar .site-sidebar-inner {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    padding: 45px 40px;
+}
+
+.person .person-avatar .avatar {
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+}
+
+::selection {
+    color: #fff;
+    background: rgba(9,48,145,0.80);
+}
