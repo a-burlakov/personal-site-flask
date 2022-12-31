@@ -35,6 +35,25 @@ body {
     border-radius: 50%;
 }
 
+.main-navigation {
+    margin: 45px -40px;
+    line-height: 30px;
+    position: relative;
+    font-size: 14px;
+}
+
+main-navigation a {
+    color: #ccc;
+    color: rgba(255,255,255,.6);
+    display: block;
+}
+
+
+
+.cv-tech-tags a:hover, .main-navigation a, .person, .person:hover, .portfolio-timeline .project-link, .site-sidebar .posts-list a {
+    text-decoration: none;
+}
+
 ::selection {
     color: #fff;
     background: rgba(9,48,145,0.80);
