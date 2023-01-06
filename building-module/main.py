@@ -12,26 +12,36 @@ PORT_DIR = 'portfolio'
 app = Flask(__name__)
 flatpages = FlatPages(app)
 freezer = Freezer(app)
-# freezer.
-# FREEZER_DESTINATION = 'C:\\PythonProjects\\personal-site'
 app.config.from_object(__name__)
 
 @app.route("/")
 def index():
+
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
     posts.sort(key=lambda item: item['date'], reverse=True)
+
+    recent_posts = posts.copy()
+    recent_posts = recent_posts[:5]
+
+    month_list = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+                  'июля', 'августа', 'сентября', 'октября', 'ноября',
+                  'декабря']
+
     cards = [p for p in flatpages if p.path.startswith(PORT_DIR)]
     cards.sort(key=lambda item: item['title'])    
     with open('./building-module/settings.json', encoding='utf8') as config:
         data = config.read()
         settings = json.loads(data)
+
     tags = set()
     for p in flatpages:
         t = p.meta.get('tag')
         if t:
             tags.add(t.lower())
 
-    return render_template('index.html', posts=posts, cards=cards, bigheader=True, **settings, tags=tags)
+    return render_template('index.html', **settings,
+                           posts=posts, recent_posts=recent_posts,
+                           cards=cards, bigheader=True, tags=tags)
 
 
 @app.route('/posts/<name>/')

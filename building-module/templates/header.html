@@ -7,7 +7,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link active" href="#header">{{ sect1 }}</a></li>
+<!--          <li><a class="nav-link active" href="#header">{{ sect1 }}</a></li>-->
           <li><a class="nav-link" href="#resume">{{ sect2 }}</a></li>
           <li><a class="nav-link" href="#portfolio">{{ sect3 }}</a></li>
           <li><a class="nav-link" href="#blog">{{ sect4 }}</a></li>
@@ -17,21 +17,23 @@
       </nav><!-- Навигация -->
 
       <div class="recent-posts">
-      {% for post in posts %}
-<!--        {{ post.title }}-->
-<!--        {{ post.date }}-->
-<!--        	<small>{{ post.date }}</small>-->
-<!--        	<p>-->
-<!--          	<h3>-->
-<!--            	{{ post.title }}-->
-<!--          	</h3>-->
-<!--        	<p>-->
-<!--          	<i>{{ post.description }}</i>-->
-<!--        	</p>-->
-<!--         	<p>{{ post.html[:100]|safe }}</p>-->
-<!--            	<a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}"><span>Читать</span></a>-->
-<!--        	</p>-->
-        	{% endfor %}
+        <div class="block-title">
+            <p>Недавно в моём блоге:</p>
+        </div>
+        <div class="block-content">
+            {% set month_rus = { '01': 'декабря', '02': 'февраля', '03': 'марта', '04': 'апреля', '05': 'мая', '06': 'июня', '07': 'июля', '08': 'августа', '09': 'сентября', '10': 'октября', '11': 'ноября', '12': 'января'} %}
+            <ul class="posts-list">
+            {% for post in recent_posts %}
+            <li>
+              <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox">
+                <div class="post-title">{{ post.title }}</div>
+                  {% set month_string = month_rus[post.date.strftime('%m')] %}
+                <div class="post-date">{{ post.date.strftime('%d') + ' ' + month_string + ', ' + post.date.strftime('%Y') + '' }}</div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
         </div>
 
       <div class="social-links">

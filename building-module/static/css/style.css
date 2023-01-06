@@ -5,34 +5,29 @@ body {
   color: #fff;
   position: relative;
   background: transparent;
-    -webkit-animation: back 50s infinite; /* Safari 4+ */
-  -moz-animation:    back 33s infinite; /* Fx 5+ */
-  -o-animation:      back 33s infinite; /* Opera 12+ */
-  animation:         back 33s infinite; /* IE 10+, Fx 29+ */
+      -webkit-animation: back 33s infinite; /* Safari 4+ */
+      -moz-animation:    back 33s infinite; /* Fx 5+ */
+      -o-animation:      back 33s infinite; /* Opera 12+ */
+      animation:         back 33s infinite; /* IE 10+, Fx 29+ */
   background-image: url("../img/bg-1.jpg");
   background-position: top right;
   background-repeat: no-repeat;
-   background-size: cover;
+  background-size: cover;
+   background-attachment:fixed;
 }
 
-/* The Keyframes*/
 @keyframes back {
-  6% {background-image: url("../img/bg-1.jpg");}
-  12% {background-image: url("../img/bg-1.jpg");}
-  18% {background-image: url("../img/bg-1.jpg");}
-  24% {background-image: url("../img/bg-2.jpg");}
-  30% {background-image: url("../img/bg-2.jpg");}
-  36% {background-image: url("../img/bg-2.jpg");}
-  42% {background-image: url("../img/bg-2.jpg");}
-  48% {background-image: url("../img/bg-3.jpg");}
-  54% {background-image: url("../img/bg-3.jpg");}
-  60% {background-image: url("../img/bg-3.jpg");}
-  66% {background-image: url("../img/bg-3.jpg");}
-  72% {background-image: url("../img/bg-4.jpg");}
-  78% {background-image: url("../img/bg-4.jpg");}
-  84% {background-image: url("../img/bg-4.jpg");}
-  90% {background-image: url("../img/bg-4.jpg");}
-/* Animation Does Not End At 100% Because It Makes The Images Transition In/Out Better For Some Reason*/
+  8% {background-image: url("../img/bg-1.jpg");}
+  16% {background-image: url("../img/bg-1.jpg");}
+  25% {background-image: url("../img/bg-1.jpg");}
+  32% {background-image: url("../img/bg-2.jpg");}
+  41% {background-image: url("../img/bg-2.jpg");}
+  50% {background-image: url("../img/bg-2.jpg");}
+  58% {background-image: url("../img/bg-2.jpg");}
+  64% {background-image: url("../img/bg-3.jpg");}
+  72% {background-image: url("../img/bg-3.jpg");}
+  81% {background-image: url("../img/bg-3.jpg");}
+  90% {background-image: url("../img/bg-3.jpg");}
 }
 
 body::before {
@@ -115,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header h2 {
   font-size: 24px;
-  margin-top: 10px;
+  margin-top: 15px;
   color: rgb(58, 57, 61, 0.8);
 }
 #header h2 span {
@@ -127,6 +122,27 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
 }
+
+#header .recent-posts {
+  margin-top: 40px;
+   color: rgb(58 57 61);
+}
+
+#header .posts-list li {
+    margin: 15px 0;
+    list-style-type: none;
+    color: rgb(58 57 61);
+}
+
+#header .posts-list .post-title {
+    color: rgb(58 57 61);
+}
+
+#header .posts-list .post-date {
+    color: rgb(58 57 61);
+        font-style: italic;
+}
+
 #header .social-links {
   margin-top: 40px;
   display: flex;
@@ -147,7 +163,6 @@ h1, h2, h3, h4, h5, h6 {
 #header .social-links a:hover {
   background: #1e90ff;
 }
-
 
 
 @media (max-width: 992px) {
@@ -178,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   background: rgba(0, 0, 0, 0.9);
 }
-#header.header-top .social-links, #header.header-top h2 {
+#header.header-top .social-links, #header.header-top .recent-posts, #header.header-top h2 {
   display: none;
 }
 #header.header-top h1 {
@@ -231,7 +246,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: rgba(58, 57, 61, 0.7);
   white-space: nowrap;
