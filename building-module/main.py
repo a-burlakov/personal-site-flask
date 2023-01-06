@@ -22,7 +22,7 @@ def index():
     posts.sort(key=lambda item: item['date'], reverse=True)
     cards = [p for p in flatpages if p.path.startswith(PORT_DIR)]
     cards.sort(key=lambda item: item['title'])    
-    with open('settings.json', encoding='utf8') as config:
+    with open('./building-module/settings.json', encoding='utf8') as config:
         data = config.read()
         settings = json.loads(data)
     tags = set()
