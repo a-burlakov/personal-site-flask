@@ -12,41 +12,41 @@
       <h1><a href="{{ site_url }}">{{ name }}</a></h1>
       <h2><span>Python</span>-разработчик</h2>
 
-<!--      <nav id="navbar" class="navbar">-->
-<!--        <ul>-->
-<!--&lt;!&ndash;          <li><a class="nav-link active" href="#header">{{ sect1 }}</a></li>&ndash;&gt;-->
-<!--          <li><a class="nav-link" href="#resume">{{ sect2 }}</a></li>-->
-<!--          <li><a class="nav-link" href="#portfolio">{{ sect3 }}</a></li>-->
-<!--          <li><a class="nav-link" href="#blog">{{ sect4 }}</a></li>-->
-<!--          <li><a class="nav-link" href="#contact">{{ sect5 }}</a></li>-->
-<!--        </ul>-->
-<!--        <i class="bi bi-list mobile-nav-toggle"></i>-->
-<!--      </nav>&lt;!&ndash; Навигация &ndash;&gt;-->
+      <nav id="navbar" class="navbar">
+        <ul>
+<!--      <li><a class="nav-link active" href="#header">{{ sect1 }}</a></li>-->
+          <li><a class="nav-link" href="#resume">{{ sect2 }}</a></li>
+          <li><a class="nav-link" href="#portfolio">{{ sect3 }}</a></li>
+          <li><a class="nav-link" href="#blog">{{ sect4 }}</a></li>
+          <li><a class="nav-link" href="#contact">{{ sect5 }}</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- Навигация -->
 
-<!--      <div class="recent-posts">-->
-<!--        <div class="block-title">-->
-<!--            <p>Недавно в моём блоге:</p>-->
-<!--        </div>-->
-<!--        <div class="block-content">-->
-<!--            {% set month_rus = { '01': 'декабря', '02': 'февраля', '03': 'марта', '04': 'апреля', '05': 'мая', '06': 'июня', '07': 'июля', '08': 'августа', '09': 'сентября', '10': 'октября', '11': 'ноября', '12': 'января'} %}-->
-<!--            <ul class="posts-list">-->
-<!--            {% for post in recent_posts %}-->
-<!--            <li>-->
-<!--              <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox">-->
-<!--                <div class="post-title">{{ post.title }}</div>-->
-<!--                  {% set month_string = month_rus[post.date.strftime('%m')] %}-->
-<!--                <div class="post-date">{{ post.date.strftime('%d') + ' ' + month_string + ', ' + post.date.strftime('%Y') + '' }}</div>-->
-<!--              </a>-->
-<!--            </li>-->
-<!--            {% endfor %}-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--        </div>-->
+      <div class="recent-posts">
+        <div class="block-title">
+            <p>Недавно в моём блоге:</p>
+        </div>
+        <div class="block-content">
+            {% set month_rus = { '01': 'декабря', '02': 'февраля', '03': 'марта', '04': 'апреля', '05': 'мая', '06': 'июня', '07': 'июля', '08': 'августа', '09': 'сентября', '10': 'октября', '11': 'ноября', '12': 'января'} %}
+            <ul class="posts-list">
+            {% for post in recent_posts %}
+            <li>
+              <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox">
+                <div class="post-title">{{ post.title }}</div>
+                  {% set month_string = month_rus[post.date.strftime('%m')] %}
+                <div class="post-date">{{ post.date.strftime('%d') + ' ' + month_string + ', ' + post.date.strftime('%Y') + '' }}</div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        </div>
 
       <div class="social-links">
-        <a href="{{ telegram }}" class="telegram"><i class="fa fa-telegram"></i></a>
-        <a href="{{ github }}" class="github"><i class="fa fa-github"></i></a>
-        <a href="{{ vk }}" class="vk"><i class="fa fa-vk"></i></a>
+        <a href="{{ telegram }}" target="_blank" class="telegram"><i class="fa fa-telegram"></i></a>
+        <a href="{{ github }}" target="_blank" class="github"><i class="fa fa-github"></i></a>
+        <a href="{{ vk }}" target="_blank" class="vk"><i class="fa fa-vk"></i></a>
         <a href="{{ email }}" class="email"><i class="fa fa-envelope"></i></a>
       </div>
       </div>
