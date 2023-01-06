@@ -23,10 +23,6 @@ def index():
     recent_posts = posts.copy()
     recent_posts = recent_posts[:5]
 
-    month_list = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                  'июля', 'августа', 'сентября', 'октября', 'ноября',
-                  'декабря']
-
     cards = [p for p in flatpages if p.path.startswith(PORT_DIR)]
     cards.sort(key=lambda item: item['title'])    
     with open('./building-module/settings.json', encoding='utf8') as config:
