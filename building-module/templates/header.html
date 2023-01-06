@@ -1,4 +1,11 @@
 {% block header %}
+
+  <!--Предзагрузка картинок, которые будут меняться анимацией - чтобы не мигали при первом появлении-->
+  <div style="position:fixed;left:9999px;opacity:0;">
+    <img src="./static/img/bg-2.jpg">
+    <img src="./static/img/bg-3.jpg">
+  </div>
+
   <!-- Хедер -->
   <header id="header">
     <div class="container">
