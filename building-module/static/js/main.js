@@ -82,6 +82,7 @@
         sections.forEach((item) => {
           item.classList.remove('section-show')
         })
+        transparent_image.classList.remove('header-top')
         return;
       }
 
