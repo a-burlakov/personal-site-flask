@@ -61,6 +61,9 @@
       let sections = select('section', true)
       let navlinks = select('#navbar .nav-link', true)
 
+      let transparent_image = select('#transparent-image')
+      transparent_image.classList.add('header-top')
+
       navlinks.forEach((item) => {
         item.classList.remove('active')
       })
@@ -79,6 +82,7 @@
         sections.forEach((item) => {
           item.classList.remove('section-show')
         })
+        transparent_image.classList.remove('header-top')
         return;
       }
 

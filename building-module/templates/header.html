@@ -1,12 +1,15 @@
 {% block header %}
 
-  <!--Предзагрузка картинок, которые будут меняться анимацией - чтобы не мигали при первом появлении-->
+  <!--Предзагрузка картинок, которые будут меняться анимацией,
+  чтобы не мигали при первом появлении во время смены друг друга.-->
   <div style="position:fixed;left:9999px;opacity:0;">
     <img src="./static/img/transparent.jpg">
-    <img src="./static/img/bg-2.jpg">
     <img src="./static/img/bg-3.jpg">
+    <img src="./static/img/bg-5.jpg">
   </div>
 
+  <!-- Image to make background semi-transparent for some pages.    -->
+    <img id="transparent-image" src="./static/img/transparent.jpg">
 <!--    <div id="landing-content">-->
 <!--&lt;!&ndash;    <section class="slider">&ndash;&gt;-->
 <!--        <img src="./static/img/bg-2.jpg">-->
@@ -54,12 +57,17 @@
         </div>
 
       <div class="social-links">
-        <a href="{{ telegram }}" target="_blank" class="telegram"><i class="fa fa-telegram"></i></a>
-        <a href="{{ github }}" target="_blank" class="github"><i class="fa fa-github"></i></a>
-        <a href="{{ vk }}" target="_blank" class="vk"><i class="fa fa-vk"></i></a>
-        <a href="{{ email }}" class="email"><i class="fa fa-envelope"></i></a>
+          <a href="{{ email }}" target="_blank" class="email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="{{ telegram }}" target="_blank" class="telegram"><i class="fa fa-telegram"></i></a>
+          <a href="{{ vk }}" target="_blank" class="vk"><i class="fa fa-vk"></i></a>
+          <a href="{{ github }}" target="_blank" class="github"><i class="fa fa-github"></i></a>
       </div>
+
+
+
       </div>
+
   </header>
+
 <!-- Конец хедера -->
 {% endblock %}

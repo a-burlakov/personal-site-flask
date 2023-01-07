@@ -2,6 +2,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #040404;
   color: #3a393d;
   position: relative ;
@@ -46,10 +47,10 @@ body {
   8% {background-image: url("../img/bg-1.jpg");}
   16% {background-image: url("../img/bg-1.jpg");}
   25% {background-image: url("../img/bg-1.jpg");}
-  32% {background-image: url("../img/bg-2.jpg");}
-  41% {background-image: url("../img/bg-2.jpg");}
-  50% {background-image: url("../img/bg-2.jpg");}
-  58% {background-image: url("../img/bg-2.jpg");}
+  32% {background-image: url("../img/bg-5.jpg");}
+  41% {background-image: url("../img/bg-5.jpg");}
+  50% {background-image: url("../img/bg-5.jpg");}
+  58% {background-image: url("../img/bg-5.jpg");}
   64% {background-image: url("../img/bg-3.jpg");}
   72% {background-image: url("../img/bg-3.jpg");}
   81% {background-image: url("../img/bg-3.jpg");}
@@ -117,6 +118,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0px;
 }
 
+
 #header h1 {
   font-size: 40px;
   margin: 0;
@@ -178,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 #header .social-links a {
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
