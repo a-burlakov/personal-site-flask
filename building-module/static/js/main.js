@@ -239,6 +239,15 @@
     }
   });
 
+    let dde = document.documentElement;
+    dde.addEventListener("mousemove", e => {
+      let ow = dde.offsetWidth;
+      let oh = dde.offsetHeight;
 
+      oh = ow * 0.6;
+
+      dde.style.setProperty('--mouseX', e.clientX * 15 / ow + "%");
+      dde.style.setProperty('--mouseY', e.clientY * 15 / oh + "%");
+    });
 
 })()

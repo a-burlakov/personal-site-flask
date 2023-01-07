@@ -10,9 +10,9 @@ body {
       -o-animation:      back 33s infinite; /* Opera 12+ */
       animation:         back 33s infinite; /* IE 10+, Fx 29+ */
   background-image: url("../img/bg-1.jpg");
-  background-position: top right;
+  background-position: var(--mouseX) var(--mouseY);
   background-repeat: no-repeat;
-  background-size: cover;
+   background-size: auto 110;
    background-attachment:fixed;
 }
 
@@ -40,6 +40,9 @@ body::before {
   top: 0;
   height: 100vh;
   z-index: -1;
+  background-position: var(--mouseX) var(--mouseY);
+
+   background-size: auto 110%;
 
 }
 @media (min-width: 1024px) {
