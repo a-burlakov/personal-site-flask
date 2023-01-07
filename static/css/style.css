@@ -12,7 +12,7 @@ body {
   background-image: url("../img/bg-1.jpg");
   background-position: var(--mouseX) var(--mouseY);
   background-repeat: no-repeat;
-   background-size: auto 110;
+   background-size: auto 110%;
    background-attachment:fixed;
 }
 
