@@ -21,8 +21,13 @@
 <body>
 
   <main id="main">
+
+  <!-- Image to make background semi-transparent for some pages.    -->
+    <img id="transparent-image" src="./static/img/transparent.jpg">
+
 {% block content %} <!-- вложенные шаблоны -->
 {% endblock %}
+  
   </main>
   <!-- Скрипты -->
   <script src="{{ url_for('static', filename='assets/purecounter/purecounter.js') }}"></script>
