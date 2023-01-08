@@ -122,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 #header h1 {
   font-size: 40px;
   margin: 0;
+  margin-right: 30px;
   padding: 0;
   line-height: 1;
   font-weight: 100;
@@ -156,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .recent-posts {
-  margin-top: 40px;
+  margin-top: 30px;
    color: rgb(58 57 61);
 }
 
@@ -168,11 +169,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .posts-list .post-title {
     color: rgb(58 57 61);
+     font-size: 14px;
 }
 
 #header .posts-list .post-date {
     color: rgb(58 57 61);
-        font-style: italic;
+    font-style: noitalic;
+    font-size: 12px;
 }
 
 #header .social-links {
@@ -228,7 +231,7 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 #header.header-top h1 {
-  margin-right: auto;
+  margin-right: 30px;
   font-size: 40px;
 }
 #header.header-top .container {

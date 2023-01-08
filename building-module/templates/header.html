@@ -46,9 +46,20 @@
             {% for post in recent_posts %}
             <li>
               <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox">
-                <div class="post-title">{{ post.title }}</div>
+
+                <!-- Let's set that medium person reads ~1500 symbols a minute.                  -->
+                {% if post.body|length < 750 %}
+                  {% set time_to_read = "менее минуты на чтение" %}
+                {% elif post.body|length < 1500 %}
+                  {% set time_to_read = "минута на чтение" %}
+                {% else %}
+                  {% set minutes_to_read = (post.body|length // 1500) + 1 %}
+                  {% set time_to_read = minutes_to_read|string + " мин. на чтение" %}
+                {% endif %}
+
+                  <div class="post-title">{{ post.title }}</div>
                   {% set month_string = month_rus[post.date.strftime('%m')] %}
-                <div class="post-date">{{ post.date.strftime('%d') + ' ' + month_string + ', ' + post.date.strftime('%Y') + '' }}</div>
+                <div class="post-date">{{ post.date.strftime('%d') + ' ' + month_string}} • {{ time_to_read }} </div>
               </a>
             </li>
             {% endfor %}
