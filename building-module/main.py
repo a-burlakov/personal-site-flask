@@ -21,7 +21,7 @@ def index():
     posts.sort(key=lambda item: item['date'], reverse=True)
 
     recent_posts = posts.copy()
-    recent_posts = recent_posts[:5]
+    recent_posts = recent_posts[:4]
 
     cards = [p for p in flatpages if p.path.startswith(PORT_DIR)]
     cards.sort(key=lambda item: item['title'])    
