@@ -24,7 +24,7 @@ def index():
     recent_posts = recent_posts[:4]
     cards = [p for p in flatpages if p.path.startswith(PORT_DIR)]
     cards.sort(key=lambda item: item['title'])    
-    with open('./building-module/settings.json', encoding='utf8') as config:
+    with open('settings.json', encoding='utf8') as config:
         data = config.read()
         settings = json.loads(data)
 
