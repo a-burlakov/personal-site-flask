@@ -1,4 +1,4 @@
-import sys, json, os
+import sys, json
 from flask import Flask, render_template
 from flask_flatpages import FlatPages, pygments_style_defs
 from flask_frozen import Freezer
@@ -22,7 +22,6 @@ def index():
 
     recent_posts = posts.copy()
     recent_posts = recent_posts[:4]
-
     cards = [p for p in flatpages if p.path.startswith(PORT_DIR)]
     cards.sort(key=lambda item: item['title'])    
     with open('./building-module/settings.json', encoding='utf8') as config:
