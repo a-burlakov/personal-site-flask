@@ -60,7 +60,6 @@ body {
 body::before {
   content: "";
   position: fixed;
-
   background-size: cover;
   left: 0;
   right: 0;
@@ -68,10 +67,13 @@ body::before {
   height: 100vh;
   z-index: -1;
   background-position: var(--mouseX) var(--mouseY);
-
-   background-size: auto 110%;
-
+  background-size: auto 110%;
 }
+
+::selection {
+    background-color: rgba(78, 142, 219, 1);
+}
+
 @media (min-width: 1024px) {
   body::before {
     background-attachment: fixed;
@@ -148,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header h2 span {
   color: rgb(58 57 61);
-  border-bottom: 2px solid rgba(78, 142, 219, 1);
+  border-bottom: 3px solid rgba(78, 142, 219, 1);
   padding-bottom: 6px;
 }
 #header img {
@@ -775,15 +777,16 @@ section .container {
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #3a393d;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(255 255 255 / 30%);
   margin: 0 3px 10px 3px;
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   background: rgba(78, 142, 219, 1);
+  color: #dee2e6;
 }
 .portfolio #portfolio-flters li:last-child {
   margin-right: 0;
