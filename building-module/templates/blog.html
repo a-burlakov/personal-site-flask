@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active"># все теги</li>
+            <li data-filter="*" class="filter-active"># все</li>
             {% for tag in tags %}
             <li data-filter=".{{ tag }}"># {{ tag }}</li>
             {% endfor %}
@@ -18,18 +18,38 @@
       </div>
       <div class="row portfolio-container">
         {% block content %}
+
+        {% set month_rus = { '01': 'декабря', '02': 'февраля', '03': 'марта', '04': 'апреля', '05': 'мая', '06': 'июня', '07': 'июля', '08': 'августа', '09': 'сентября', '10': 'октября', '11': 'ноября', '12': 'января'} %}
+
         {% for post in posts %}
         <div class="col-lg-4 col-md-6 portfolio-item {{ post.tag }}">
           <div class="portfolio-wrap">
-            <img src="static/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
+            <img src="static/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
+<!--            <a class="blog-link" href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" >-->
+           <div class="portfolio-info">
               <h4><a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox">{{ post.title }}</a></h4>
               <p>{{ post.description }}</p>
-              <div class="portfolio-links">
-                <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox"><i class="bx bx-caret-down-circle" style="padding-top: 15px"></i></a>
-              </div>
-            </div>
+<!--              <div class="portfolio-links">-->
+<!--                <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox"><i class="bx bx-caret-down-circle" style="padding-top: 15px"></i></a>-->
+<!--              </div>-->
+
+                <!-- Let's set that medium person reads ~1500 symbols a minute.                  -->
+                {% if post.body|length < 750 %}
+                  {% set time_to_read = "менее минуты на чтение" %}
+                {% elif post.body|length < 1500 %}
+                  {% set time_to_read = "минута на чтение" %}
+                {% else %}
+                  {% set minutes_to_read = (post.body|length // 1500) + 1 %}
+                  {% set time_to_read = minutes_to_read|string + " мин. на чтение" %}
+                {% endif %}
+
+                  {% set month_string = month_rus[post.date.strftime('%m')] %}
+                <div class="blog-post-date">{{ post.date.strftime('%d') + ' ' + month_string}} • {{ time_to_read }} </div>
+<!--              </a>-->
           </div>
+
+          </div>
+
         </div>
         {% endfor %}
         {% endblock %}
