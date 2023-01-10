@@ -6,13 +6,13 @@ body {
   background-color: #040404;
   color: #3a393d;
   position: relative ;
-  background: transparent;
+  background: rgba(203, 220, 230, 1);
       -webkit-animation: back 33s infinite; /* Safari 4+ */
       -moz-animation:    back 33s infinite; /* Fx 5+ */
       -o-animation:      back 33s infinite; /* Opera 12+ */
       animation:         back 33s infinite; /* IE 10+, Fx 29+ */
   background-image: url("../img/bg-1.jpg");
-  background-position: var(--mouseX) var(--mouseY);
+  background-position: calc(max(100%, var(--mouseX))) var(--mouseY);
   background-repeat: no-repeat;
    background-size: auto 110%;
    background-attachment:fixed;
