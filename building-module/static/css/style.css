@@ -194,8 +194,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   margin-right: 8px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
 }
 #header .social-links a:hover {
   background: rgba(78, 142, 219, 1);
@@ -760,7 +760,7 @@ section .container {
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .portfolio #portfolio-flters {
   padding: 0;
@@ -796,11 +796,10 @@ section .container {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.6);
 }
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0);
   position: absolute;
   left: 30px;
   right: 30px;
@@ -811,19 +810,18 @@ section .container {
   opacity: 0;
 }
 .portfolio .portfolio-wrap .portfolio-info {
-  opacity: 100;
-  position: absolute;
-  top: 0;
-  left: 5px;
-  right: 5px;
-  bottom: 0;
-  text-align: center;
-  z-index: 3;
-  transition: all ease-in-out 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+     opacity: 100;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    right: 5px;
+    bottom: 0;
+    text-align: center;
+    z-index: 3;
+    transition: all ease-in-out 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
@@ -833,10 +831,10 @@ section .container {
 }
 .portfolio .portfolio-wrap .portfolio-info p {
   color: #3a393dfff;
-  font-size: 12px;
-  text-transform: uppercase;
+  font-size: 14px;
   padding: 0;
   margin: 0;
+  text-align: left;
 }
 .portfolio .portfolio-wrap .portfolio-links {
   text-align: center;
@@ -871,12 +869,21 @@ section .container {
   right: 15px;
 }
 
+.blog-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
 .portfolio-details {
   padding-top: 40px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgb(203 220 230);
   position: fixed;
   left: 0;
   right: 0;
@@ -894,7 +901,7 @@ section .container {
   margin-bottom: 20px;
 }
 .portfolio-details .portfolio-info {
-  padding-top: 45px;
+  padding-top: 30px;
 }
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
@@ -930,6 +937,12 @@ section .container {
 }
 .portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
   background-color: rgba(78, 142, 219, 1);
+}
+
+.blog-post-date {
+    color: rgb(58 57 61);
+    font-size: 12px;
+    padding-top: 8px;
 }
 
 /*--------------------------------------------------------------
@@ -1095,14 +1108,15 @@ section .container {
 
 ::-webkit-scrollbar {
   width: 7px;
-}
+  background: #fff0;
+    }
 
 ::-webkit-scrollbar-thumb {
-  background: #666;
+  background: rgb(102 102 102 / 60%);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(197, 214, 224, 1);
+  background: rgb(255 255 255 / 0%);
   border-radius: 20px;
 }
