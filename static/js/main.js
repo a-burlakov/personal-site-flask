@@ -243,7 +243,10 @@
     }
   });
 
+
     let dde = document.documentElement;
+    dde.style.setProperty('--mouseX', "0%");
+    dde.style.setProperty('--mouseY', "0%");
     dde.addEventListener("mousemove", e => {
 
       let transparent_image = select('#transparent-image')
