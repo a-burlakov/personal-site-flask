@@ -1,7 +1,6 @@
-import sys, json
+import json
 from flask import Flask, render_template
 from flask_flatpages import FlatPages, pygments_style_defs
-from flask_frozen import Freezer
 
 DEBUG = False
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -11,7 +10,6 @@ POST_DIR = 'posts'
 PORT_DIR = 'portfolio'
 app = Flask(__name__)
 flatpages = FlatPages(app)
-freezer = Freezer(app)
 app.config.from_object(__name__)
 
 @app.route("/")
@@ -64,7 +62,4 @@ def page_not_found(e):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "build":
-        freezer.freeze()
-    else:
-        app.run(host='127.0.0.1', port=8000, debug=True)
+    app.run(host='127.0.0.1', port=8000, debug=True)
