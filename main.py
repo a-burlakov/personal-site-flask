@@ -12,16 +12,17 @@ app = Flask(__name__)
 flatpages = FlatPages(app)
 app.config.from_object(__name__)
 
+
 @app.route("/")
 def index():
-
-    posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
+    posts = [p for p in flatpages if p.path.startswith(POST_DIR)
+             and not p.meta['archived']]
     posts.sort(key=lambda item: item['date'], reverse=True)
 
     recent_posts = posts.copy()
     recent_posts = recent_posts[:4]
     cards = [p for p in flatpages if p.path.startswith(PORT_DIR)]
-    cards.sort(key=lambda item: item['title'])    
+    cards.sort(key=lambda item: item['title'])
     with open('settings.json', encoding='utf8') as config:
         data = config.read()
         settings = json.loads(data)
