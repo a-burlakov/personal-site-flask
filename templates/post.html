@@ -5,6 +5,7 @@ body::before {
 	background: #040404 url("{{ url_for('static', filename='img/portfolio/post.jpg') }}");
 }
 </style>
+    {% set month_rus = { '01': 'декабря', '02': 'февраля', '03': 'марта', '04': 'апреля', '05': 'мая', '06': 'июня', '07': 'июля', '08': 'августа', '09': 'сентября', '10': 'октября', '11': 'ноября', '12': 'января'} %}
     <!-- ======= шаблон для поста ======= -->
     <div id="portfolio-details" class="portfolio-details">
       <div class="container">
@@ -13,13 +14,9 @@ body::before {
             <h2 class="portfolio-title">{{ post.title }}</h2>
           </div>
           <div class="col-lg-8 portfolio-info">
-            <h3>{{ post.dеscription }}</h3>
-            <ul>
-              <li><strong>Категория</strong>: {{ post.tag.title() }}</li>
-              <li><strong>Проект</strong>: {{ post.project }}</li>
-              <li><strong>Статья опубликована</strong>: {{ post.date }}</li>
-              <li><strong>Платформа</strong>: <a href="{{ post.link }}">{{ post.platform}}</a></li>
-            </ul>
+            <h3>{{ post.description }}</h3>
+            {% set month_string = month_rus[post.date.strftime('%m')] %}
+            <p class="post-date">{{ post.date.strftime('%d') + ' ' + month_string + ' ' + post.date.strftime('%Y')}}</p>
             <p>
               {{ post.html|safe }}
             </p>
