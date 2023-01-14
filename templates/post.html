@@ -14,7 +14,9 @@ body::before {
             <h2 class="portfolio-title">{{ post.title }}</h2>
           </div>
           <div class="col-lg-8 portfolio-info">
+            {% if post.description|length > 1 %}
             <h3>{{ post.description }}</h3>
+              {% endif %}
             {% set month_string = month_rus[post.date.strftime('%m')] %}
             <p class="post-date">{{ post.date.strftime('%d') + ' ' + month_string + ' ' + post.date.strftime('%Y')}}</p>
             <p>
