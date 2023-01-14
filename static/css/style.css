@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 30px;
   padding: 0;
   line-height: 1;
-  font-weight: 100;
+  font-weight: 300;
   font-family: "Poppins", sans-serif;
 }
 
@@ -204,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 992px) {
   body {
-      background-position: 75%;
+      background-position: top 0px left 75%;
   }
 
   #transparent-image.header-top {
@@ -217,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
     background-attachment: fixed;
     display: block;
-    opacity: 0.95;
+    opacity: 0.97;
     height: auto;
     background-repeat: repeat;
   }
@@ -225,14 +225,16 @@ h1, h2, h3, h4, h5, h6 {
   #header h1 {
     text-align: center;
     margin-right: 0px;
+    text-align: left;
   }
   #header .social-links {
     margin-top: 15px;
+    align-self: center;
   }
   #header .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
   #header .recent-posts {
     margin-top: 0px;
@@ -363,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(203, 220, 230, 0.98);
   transition: 0.3s;
   z-index: 999;
   margin-top: 0;
@@ -378,12 +380,10 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 55px;
   right: 15px;
-  bottom: 45px;
   left: 15px;
   padding: 10px 0;
   overflow-y: auto;
   transition: 0.3s;
-  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 .navbar-mobile li {
   padding: 12px 20px;
@@ -392,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 .navbar-mobile a, .navbar-mobile a:focus {
-  font-size: 16px;
+  font-size: 28px;
   position: relative;
 }
 
