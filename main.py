@@ -2,7 +2,7 @@ import json
 from flask import Flask, render_template
 from flask_flatpages import FlatPages, pygments_style_defs
 
-DEBUG = False
+DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
