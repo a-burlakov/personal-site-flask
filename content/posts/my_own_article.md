@@ -1,7 +1,7 @@
 ﻿title: Тестовый пост!
 date: 2023-01-10
 description: Функции представления и маршруты
-tag: flask
+tag: книги
 archived: false
 
 

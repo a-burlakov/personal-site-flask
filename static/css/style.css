@@ -26,7 +26,8 @@ body {
     background-attachment: fixed;
     display: block;
     opacity: 0.95;
-    height: auto;
+    height: 1000%;
+    width: 1000%;
     background-repeat: repeat;
 }
 
@@ -118,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 #header h1 {
-  font-size: 40px;
+  font-size: 36px;
   margin: 0;
   margin-right: 30px;
   padding: 0;
@@ -250,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #header.header-top h1 {
   margin-right: 30px;
-  font-size: 40px;
+  font-size: 36px;
 }
 #header.header-top .container {
   display: flex;
