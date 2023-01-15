@@ -2,7 +2,7 @@ import json
 from flask import Flask, render_template
 from flask_flatpages import FlatPages, pygments_style_defs
 
-DEBUG = False
+DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
@@ -16,7 +16,7 @@ app.config.from_object(__name__)
 @app.route("/")
 def index():
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)
-             and not p.meta['archived']]
+             and not p.meta.get('archived', True)]
     posts.sort(key=lambda item: item['date'], reverse=True)
 
     recent_posts = posts.copy()
