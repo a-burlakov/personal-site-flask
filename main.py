@@ -16,7 +16,7 @@ app.config.from_object(__name__)
 @app.route("/")
 def index():
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)
-             and not p.meta['archived']]
+             and not p.meta.get('archived', True)]
     posts.sort(key=lambda item: item['date'], reverse=True)
 
     recent_posts = posts.copy()
