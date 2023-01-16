@@ -245,6 +245,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   top: 0;
   right: 0;
+  background: #c5d6dd;
 }
 #header.header-top .social-links, #header.header-top .recent-posts, #header.header-top h2 {
   display: none;
