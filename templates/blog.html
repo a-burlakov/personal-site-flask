@@ -27,7 +27,7 @@
             <img src="static/img/portfolio/portfolio-1.png" class="img-fluid" alt="">
               <!--            <a class="blog-link" href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" >-->
               <div class="portfolio-info">
-                  <img src="static/img/posts/my_own_article.png" class="blog-image" alt="">
+                  <img src="static/img/posts/{{ post.filename }}.png" class="blog-image" alt="">
                   <h4><a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}" data-gallery="blogDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox">{{ post.title }}</a></h4>
                 <p>{{ post.description }}</p>
 <!--              <div class="portfolio-links">-->

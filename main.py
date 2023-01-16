@@ -19,6 +19,8 @@ def index():
     posts = [p for p in flatpages if p.path.startswith(POST_DIR)
              and not p.meta.get('archived', True)]
     posts.sort(key=lambda item: item['date'], reverse=True)
+    for post in posts:
+        post.meta['filename'] = post.path.split('/')[-1]
 
     recent_posts = posts.copy()
     recent_posts = recent_posts[:4]
