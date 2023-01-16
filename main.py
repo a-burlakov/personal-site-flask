@@ -5,6 +5,7 @@ from flask_flatpages import FlatPages, pygments_style_defs
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
+FLATPAGES_MARKDOWN_EXTENSIONS = []
 FLATPAGES_ROOT = 'content'
 POST_DIR = 'posts'
 PORT_DIR = 'portfolio'

@@ -920,7 +920,7 @@ section .container {
 }
 .portfolio-details .portfolio-info h3 {
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 5px;
 }
 .portfolio-details .portfolio-info .post-date {
@@ -965,6 +965,15 @@ section .container {
     font-size: 12px;
     padding-top: 8px;
 }
+
+[alt="post-image"] {
+    display: block;
+    margin: auto;
+    max-height: 700px;
+    box-shadow: 0px 0px 45px #0000005c;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
 
 /*--------------------------------------------------------------
 # Contact
