@@ -1,3 +1,4 @@
+import os
 import json
 from flask import Flask, render_template
 from flask_flatpages import FlatPages, pygments_style_defs
@@ -7,6 +8,7 @@ FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_MARKDOWN_EXTENSIONS = []
 FLATPAGES_ROOT = 'content'
+BLOG_PICTURES_FOLDER = 'static/img/posts/'
 POST_DIR = 'posts'
 PORT_DIR = 'portfolio'
 app = Flask(__name__)
@@ -20,7 +22,11 @@ def index():
              and not p.meta.get('archived', True)]
     posts.sort(key=lambda item: item['date'], reverse=True)
     for post in posts:
-        post.meta['filename'] = post.path.split('/')[-1]
+        picture_name = post.path.split('/')[-1] + '.png'
+        if os.path.exists(BLOG_PICTURES_FOLDER + picture_name):
+            post.meta['picture_path'] = BLOG_PICTURES_FOLDER + picture_name
+        else:
+            post.meta['picture_path'] = BLOG_PICTURES_FOLDER + 'blog-no-picture.png'
 
     recent_posts = posts.copy()
     recent_posts = recent_posts[:4]
