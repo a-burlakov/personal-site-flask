@@ -980,6 +980,16 @@ section .container {
     opacity: 0.9;
 }
 
+.blog-image-link {
+    max-width: 100%;
+    width: 100%;
+    max-height: 200px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 1px solid #70757b;
+    opacity: 0.9;
+}
+
 [alt="post-image"] {
     display: block;
     margin: auto;
