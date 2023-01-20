@@ -977,7 +977,6 @@ section .container {
     margin-bottom: 20px;
     object-fit: cover;
     border: 1px solid #70757b;
-    opacity: 0.9;
 }
 
 .blog-image-link {
